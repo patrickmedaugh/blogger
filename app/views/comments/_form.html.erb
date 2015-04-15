@@ -1,0 +1,12 @@
+<h3>Comments (<%= @article.comments.size %>)</h3>
+<%= form_for [ @article, @comment ] do |f| %>
+  <p>
+    <%= f.text_field :author_name, placeholder:"Your name" %>
+  </p>
+  <p>
+    <%= f.text_area :body, placeholder: "Your comment" %>
+  </p>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>
