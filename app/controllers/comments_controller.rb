@@ -10,6 +10,15 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    puts "Parameters are #{params}"
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+
+    redirect_to article_path(@comment.article)
+  end
+
+
   private
 
   def comment_params
